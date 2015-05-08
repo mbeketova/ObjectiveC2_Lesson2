@@ -16,11 +16,15 @@
 
 + (void) addFigures:(UIView*)view {
     
+    int j = KONST_j; //сторона квадрата
+    int k = KONST_i; // отступ от края
+    
 //------------------------------------------------------------------
  //создаем массив белых пешек:
     
     NSMutableArray * imagesArrayWhitePawn = [[NSMutableArray alloc] init];
     UIImage * imageWhitePawn = [UIImage imageNamed: [NSString stringWithFormat:@"pawn-white.png"]];
+    
     
     for (int i = 0; i <8 ; i++) {
         [imagesArrayWhitePawn addObject:imageWhitePawn];
@@ -29,9 +33,6 @@
     
     for (int i = 0, m = 0; i < imagesArrayWhitePawn.count; i++) {
         
-            int j = KONST_j;
-            int k = KONST_i;
-      
             UIView * figureView = [[UIView alloc] initWithFrame:CGRectMake(k+m, k+6*j , j, j)];
             UIImageView * imageView = [[UIImageView alloc]initWithFrame:figureView.bounds];
             m = m+j;
@@ -53,10 +54,7 @@
     
     
     for (int i = 0, m = 0; i < imagesArrayBlackPawn.count; i++) {
-        
-        int j = KONST_j;
-        int k = KONST_i;
-        
+       
         UIView * figureView = [[UIView alloc] initWithFrame:CGRectMake(k+m, k+j , j, j)];
         UIImageView * imageView = [[UIImageView alloc]initWithFrame:figureView.bounds];
         m = m+j;
@@ -88,8 +86,6 @@
     
     for (int i = 0, m = 0; i < imagesArrayWhite.count; i++) {
         
-        int j = KONST_j;
-        int k = KONST_i;
         
         UIView * figureView = [[UIView alloc] initWithFrame:CGRectMake(k+m, k+7*j , j, j)];
         UIImageView * imageView = [[UIImageView alloc]initWithFrame:figureView.bounds];
@@ -122,10 +118,7 @@
     [imagesArrayBlack addObject:imageBlackRook];
     
     for (int i = 0, m = 0; i < imagesArrayBlack.count; i++) {
-        
-        int j = KONST_j;
-        int k = KONST_i;
-        
+      
         UIView * figureView = [[UIView alloc] initWithFrame:CGRectMake(k+m, k, j, j)];
         UIImageView * imageView = [[UIImageView alloc]initWithFrame:figureView.bounds];
         m = m+j;

@@ -64,7 +64,7 @@
                             label_a.text = [arrayA objectAtIndex:l];
                             [view addSubview:label_a];
                             
-                            //подпиь цифра:
+                            //подпиcь цифра:
                             UILabel * label_b = [[UILabel alloc] initWithFrame:CGRectMake(k + k + (i+l*j) , k + (i+r*j), s, s)];
                             label_b.textColor = [UIColor blackColor];
                             label_b.text = [arrayB objectAtIndex:r];

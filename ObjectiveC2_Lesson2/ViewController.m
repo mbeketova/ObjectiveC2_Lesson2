@@ -11,6 +11,9 @@
 #import "ViewFigures.h"
 #import "AddConstants.h"
 
+// Условие домашнего задания: реализовать шахматную доску, расположить фигуры (черные/белые) и что бы их можно было передвигать.
+// Все сделать в коде, интерфейс билдер должен остаться чистым.
+
 
 @interface ViewController ()
 
@@ -38,10 +41,11 @@
     NSArray * arrayA = [stringA componentsSeparatedByString:@","];
     NSArray * arrayB = [stringB componentsSeparatedByString:@","];
     
-    int j = KONST_j;
-    int k = KONST_k;
-    int s = KONST_s;
-    int i = KONST_i;
+    int j = KONST_j;//размер стороны квадрата
+    int k = KONST_k;//величина отступа от края для лейба
+    int s = KONST_s;//размер для лейба
+    int i = KONST_i; //величина отступа от края
+
     
     for (int a = 0; a < arrayA.count; a++) {
         
@@ -66,7 +70,7 @@
         label_a.text = [arrayB objectAtIndex:a];
         [self.view addSubview:label_a];
         
-        // подписи справа (цифры
+        // подписи справа (цифры)
         UILabel * label_b = [[UILabel alloc] initWithFrame:CGRectMake(i+k/2+8*j, k+j/2+a*j, s, s)];
         label_b.textColor = [UIColor blackColor];
         label_b.text = [arrayB objectAtIndex:a];
