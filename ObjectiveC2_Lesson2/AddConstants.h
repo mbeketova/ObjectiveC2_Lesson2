@@ -13,7 +13,7 @@
 #define                                KONST_j                                  90 //сторона квадрата
 #define                                KONST_i                                  25 //отступ от края
 #define                                KONST_k                                  10 //величина отступа от края для лейба
-#define                                KONST_s                                  20 //размер для лейба
+#define                                KONST_s                                  30 //размер для лейба
 
 
 

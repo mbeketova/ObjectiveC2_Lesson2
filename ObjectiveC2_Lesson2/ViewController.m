@@ -29,8 +29,52 @@
     UIImage * image_BgFon = [UIImage imageNamed:@"bgfon2.jpg"];
     UIColor * color_Bg = [UIColor colorWithPatternImage:image_BgFon];
     self.view.backgroundColor = color_Bg;
-
+    
+    
+    //подписи буквенные и цифровые: 
+    NSString * stringA = @"a,b,c,d,e,f,g,h";
+    NSString * stringB = @"8,7,6,5,4,3,2,1";
+    
+    NSArray * arrayA = [stringA componentsSeparatedByString:@","];
+    NSArray * arrayB = [stringB componentsSeparatedByString:@","];
+    
     int j = KONST_j;
+    int k = KONST_k;
+    int s = KONST_s;
+    int i = KONST_i;
+    
+    for (int a = 0; a < arrayA.count; a++) {
+        
+        //нижние буквенные подписи:
+        UILabel * label_a = [[UILabel alloc] initWithFrame:CGRectMake(2*k+j/2+a*j, 2*k+8*j, s, s)];
+        label_a.textColor = [UIColor blackColor];
+        label_a.text = [arrayA objectAtIndex:a];
+        [self.view addSubview:label_a];
+        
+        // верхние буквенные подписи:
+        UILabel * label_b = [[UILabel alloc] initWithFrame:CGRectMake(2*k+j/2+a*j, 0, s, s)];
+        label_b.textColor = [UIColor blackColor];
+        label_b.text = [arrayA objectAtIndex:a];
+        [self.view addSubview:label_b];
+
+    }
+    
+    for (int a = 0; a < arrayB.count; a++) {
+        //подписи слева (цифры)
+        UILabel * label_a = [[UILabel alloc] initWithFrame:CGRectMake(k/2, k+j/2+a*j, s, s)];
+        label_a.textColor = [UIColor blackColor];
+        label_a.text = [arrayB objectAtIndex:a];
+        [self.view addSubview:label_a];
+        
+        // подписи справа (цифры
+        UILabel * label_b = [[UILabel alloc] initWithFrame:CGRectMake(i+k/2+8*j, k+j/2+a*j, s, s)];
+        label_b.textColor = [UIColor blackColor];
+        label_b.text = [arrayB objectAtIndex:a];
+        [self.view addSubview:label_b];
+    }
+    
+
+
    
     UIView* chessBoardView = [[UIView alloc] initWithFrame:(CGRectMake(0, 0, j, j))];
     [ViewChessBoard set_View:chessBoardView]; //вызов метода класса с шахматным полем (делаю через доп. вью, чтобы нельзя было двигать элементы доски)
